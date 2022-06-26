@@ -1,0 +1,14 @@
+{
+  "name": "javascript-iiko-delivery-library",
+  "version": "1.0.0",
+  "description": "Simple iiko delivery library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ITS360",
+  "license": "ISC",
+  "dependencies": {
+    "javascript-iiko-api-client": "^1.0.0"
+  }
+}
