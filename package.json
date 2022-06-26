@@ -6,9 +6,26 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "ITS360",
+  "author": {
+    "name" : "ITS360",
+    "email" : "pardavimai@its360.lt",
+    "url" : "https://its360.lt"
+  },
   "license": "ISC",
   "dependencies": {
     "javascript-iiko-api-client": "^1.0.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ITS360/javascript-iiko-delivery-library.git"
+  },
+  "keywords": [
+    "iiko",
+    "iiko-delivery"
+  ],
+  "bugs": {
+    "url": "https://github.com/ITS360/javascript-iiko-delivery-library/issues"
+  },
+  "homepage": "https://github.com/ITS360/javascript-iiko-delivery-library#readme"
 }

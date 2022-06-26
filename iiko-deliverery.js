@@ -11,6 +11,11 @@ class IikoDeliverery {
         this.#_client = new IikoClient(address, login);
     }
 
+    /**
+     *
+     * @returns {Promise<*>}
+     */
+
     async getOrganisations(){
         try{
             await this.#_client.connect();
@@ -20,6 +25,12 @@ class IikoDeliverery {
             throw new Error(err);
         }
     }
+
+    /**
+     *
+     * @param organisationId {String}
+     * @returns {Promise<*>}
+     */
 
     async getNomenclature(organisationId){
         try{
@@ -32,6 +43,12 @@ class IikoDeliverery {
         }
     }
 
+    /**
+     *
+     * @param organisationIds {Array<String>}
+     * @returns {Promise<*>}
+     */
+
     async getPaymentMethods(organisationIds){
         try{
             let paymentMethods = this.#_client.request("post", "payment_types", "", {
@@ -42,6 +59,12 @@ class IikoDeliverery {
             throw new Error(err);
         }
     }
+
+    /**
+     *
+     * @param organisationIds {Array<String>}
+     * @returns {Promise<*>}
+     */
 
     async getTerminalGroups(organisationIds){
         try{
@@ -54,6 +77,12 @@ class IikoDeliverery {
         }
     }
 
+    /**
+     *
+     * @param organizationIds {Array<String>}
+     * @returns {Promise<*>}
+     */
+
     async getDeliveryOrderTypes(organizationIds){
         try{
             let orderTypes = await this.#_client.request("post", "deliveries/order_types", "", {
@@ -65,6 +94,12 @@ class IikoDeliverery {
         }
     }
 
+    /**
+     * 
+     * @param organizationIds {Array<String>}
+     * @returns {Promise<*>}
+     */
+    
     async getDeliveryCities(organizationIds){
         try{
             let deliveryCities = await this.#_client.request("post", "cities", "", {
@@ -76,6 +111,13 @@ class IikoDeliverery {
         }
     }
 
+    /**
+     * 
+     * @param organizationId {String}
+     * @param cityId {String}
+     * @returns {Promise<*>}
+     */
+    
     async getDeliveryStreets(organizationId, cityId){
         try{
             let streets = await this.#_client.request("post", "streets/by_city", "", {
@@ -88,6 +130,12 @@ class IikoDeliverery {
         }
     }
 
+    /**
+     * 
+     * @param delivery {Object}
+     * @returns {Promise<*>}
+     */
+    
     async deliveriesCreate(delivery){
         try{
             let deliveryResponse = await this.#_client.request("post", "deliveries/create", "", delivery);
@@ -97,6 +145,13 @@ class IikoDeliverery {
         }
     }
 
+    /**
+     * 
+     * @param organizationId {String}
+     * @param orderIds {Array<String>}
+     * @returns {Promise<*>}
+     */
+    
     async getDelivery(organizationId, orderIds){
         try{
             let delivery = this.#_client.request("post", "deliveries/by_id", "", {
