@@ -1,5 +1,9 @@
 # iiko Delivery Library
 
+## Installation
+
+`npm install -s javascript-iiko-delivery-library`
+
 ## Methods
 
 ### getOrganisations();

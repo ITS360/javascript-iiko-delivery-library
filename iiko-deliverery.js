@@ -18,7 +18,6 @@ class IikoDeliverery {
 
     async getOrganisations(){
         try{
-            await this.#_client.connect();
             let organisations = await this.#_client.request("get", "organizations", "", null);
             return organisations.organizations;
         }catch (err){
